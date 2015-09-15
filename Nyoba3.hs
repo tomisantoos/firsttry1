@@ -53,3 +53,9 @@ take' 0 (x:xs) = []
 take' a (x:xs) = x : take' (a-1) (xs)
 
 --pembatas
+
+length' [] = 0
+length' [a] = 1
+length' (x:xs) = 1 + length' (xs) 
+
+--pembatas
