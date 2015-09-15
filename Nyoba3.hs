@@ -23,14 +23,14 @@ snd' (a,b) = b
 --pembatas
 
 min' a b
-  | a > b = b
-  | otherwise = a
+  | a > b = a
+  | otherwise = b
 
   --pembatas
 
 max' a b
-  | a > b = a
-  | otherwise = b
+  | a > b = b
+  | otherwise = a
 
   --pembatas
 
@@ -42,12 +42,14 @@ tail' (x:xs) = xs
 
 --pembatas
 
-drop' _ [] = []
-drop' 0 xs = xs
-drop' n (x:xs) = drop' (n-1) xs
+drop' x [] = []
+drop' 0 (x:xs) = (x:xs)
+drop' n (x:xs) = drop' (n-1) (xs)
 
 --pembatas
 
 take' x [] = []
 take' 0 (x:xs) = []
 take' a (x:xs) = x : take' (a-1) (xs)
+
+--pembatas
